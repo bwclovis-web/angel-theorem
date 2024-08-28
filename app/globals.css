@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --purple: #663399;
+  --font-color: #09090b;
+  --bg-color: #f5f5f4;
+  --accent-color: #1e1b4b;
+}
+:root {
+  --sz: 1.3vmin;
+  --on: #03A9F4;
+  --of: #fff0;
+  --gr: #666666;
+  --tr: all 0.5s ease 0s;
+  --lg: var(--of);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --font-color: #f5f5f4;
+    --bg-color: #0c0a09;
+    --accent-color: #3730a3;
+  }
+}
+
+body {
+  @apply bg-stone-100 dark:bg-slate-950 text-stone-900 dark:text-stone-300
+}
+
+h1,
+.h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  @apply uppercase font-black tracking-wide
+}
+
+h2,
+.h2 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  @apply font-semibold
+}
+
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .content-container {
+    @apply max-w-[1440px] px-6 mx-auto w-full
+  }
+
+  .dynamic-offset {
+    @apply pt-28 px-5 md:ml-40 md:pt-10 xl:w-2/3 2xl:w-1/2
+  }
+
+  .rich-summary {
+    p {
+      @apply pb-2
+    }
+    ul {
+      @apply list-disc pl-5 mb-4
+    }
+  }
+  
+}
+
